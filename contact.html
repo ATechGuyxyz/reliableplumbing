@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us - Reliable Plumbing Services</title>
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<!-- EmailJS Library -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script type="text/javascript">
+  (function() {
+    // Initialize EmailJS with your user ID (you'll get this when you sign up)
+    emailjs.init("YOUR_USER_ID");
+  })();
+</script>
+</head>
+<body>
+<!-- Header -->
+<header class="header">
+  <div class="container">
+    <div class="header-content">
+      <a href="index.html" class="logo">Reliable Plumbing</a>
+      
+      <nav class="desktop-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="testimonials.html">Testimonials</a></li>
+          <li><a href="contact.html" class="active">Contact</a></li>
+        </ul>
+      </nav>
+      
+      <a href="tel:5551234567" class="call-button">
+        <i class="fas fa-phone"></i> (555) 123-4567
+      </a>
+      
+      <button class="mobile-menu-button" aria-label="Toggle Menu">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu">
+  <div class="mobile-menu-header">
+    <span class="logo">Reliable Plumbing</span>
+    <button class="close-menu" aria-label="Close Menu">
+      <i class="fas fa-times"></i>
+    </button>
+  </div>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="testimonials.html">Testimonials</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+  <div class="mobile-call">
+    <a href="tel:5551234567" class="call-button">
+      <i class="fas fa-phone"></i> (555) 123-4567
+    </a>
+  </div>
+</div>
+
+<main>
+  <!-- Hero Section -->
+  <section class="page-hero">
+    <div class="hero-overlay"></div>
+    <div class="container">
+      <div class="hero-content">
+        <h1>Contact Us</h1>
+        <p>Get in touch with our team for all your plumbing needs. We're here to help!</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Information and Form -->
+  <section class="section bg-white">
+    <div class="container">
+      <div class="contact-grid">
+        <!-- Contact Information -->
+        <div class="contact-info">
+          <h2 class="section-title-left">Get In Touch</h2>
+          <p class="contact-intro">
+            Have questions or need to schedule a service? Contact us using any of the methods below or fill out the form, and we'll get back to you as soon as possible.
+          </p>
+          
+          <div class="contact-cards">
+            <div class="contact-card">
+              <div class="contact-icon">
+                <i class="fas fa-phone"></i>
+              </div>
+              <div class="contact-details">
+                <h3>Phone</h3>
+                <p>(555) 123-4567</p>
+                <p>Emergency: (555) 987-6543</p>
+              </div>
+            </div>
+            
+            <div class="contact-card">
+              <div class="contact-icon">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <div class="contact-details">
+                <h3>Email</h3>
+                <p>info@reliableplumbing.com</p>
+                <p>support@reliableplumbing.com</p>
+              </div>
+            </div>
+            
+            <div class="contact-card">
+              <div class="contact-icon">
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+              <div class="contact-details">
+                <h3>Address</h3>
+                <p>123 Plumbing Street</p>
+                <p>Anytown, ST 12345</p>
+              </div>
+            </div>
+            
+            <div class="contact-card">
+              <div class="contact-icon">
+                <i class="fas fa-clock"></i>
+              </div>
+              <div class="contact-details">
+                <h3>Business Hours</h3>
+                <p>Monday - Friday: 8:00 AM - 6:00 PM</p>
+                <p>Saturday: 9:00 AM - 4:00 PM</p>
+                <p>Sunday: Closed (Emergency Services Available)</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Contact Form -->
+        <div class="contact-form-container">
+          <h2 class="section-title-left">Send Us a Message</h2>
+          
+          <div id="form-success" class="form-success">
+            <h3>Thank You!</h3>
+            <p>
+              Your message has been sent successfully. We'll get back to you as soon as possible.
+            </p>
+          </div>
+          
+          <form id="contact-form" class="contact-form">
+            <div class="form-group">
+              <label for="name">Full Name *</label>
+              <input type="text" id="name" name="name" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="email">Email Address *</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="phone">Phone Number *</label>
+              <input type="tel" id="phone" name="phone" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="message">Message *</label>
+              <textarea id="message" name="message" rows="5" required></textarea>
+            </div>
+            
+            <button type="submit" class="btn btn-primary btn-full">
+              <span class="btn-text">Get in Touch</span>
+              <span class="btn-loading" style="display: none;">
+                <i class="fas fa-spinner fa-spin"></i> Sending...
+              </span>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Map Section -->
+  <section class="section bg-blue-light">
+    <div class="container">
+      <h2 class="section-title">Find Us</h2>
+      <div class="map-container">
+        <!-- This would be replaced with an actual Google Maps embed -->
+        <div class="map-placeholder">
+          <i class="fas fa-map-marker-alt"></i>
+          <p>Google Maps would be embedded here</p>
+          <p>123 Plumbing Street, Anytown, ST 12345</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="section bg-white">
+    <div class="container">
+      <h2 class="section-title">Frequently Asked Questions</h2>
+      <div class="faq-container">
+        <div class="faq-card">
+          <h3>Do you offer emergency services?</h3>
+          <p>Yes, we provide 24/7 emergency plumbing services. Call our emergency line at (555) 987-6543 for immediate assistance.</p>
+        </div>
+        
+        <div class="faq-card">
+          <h3>What areas do you serve?</h3>
+          <p>We serve the entire metropolitan area including Downtown, North Side, South Side, East End, West Hills, Riverside, Oakwood, and Pine Valley.</p>
+        </div>
+        
+        <div class="faq-card">
+          <h3>Are your plumbers licensed and insured?</h3>
+          <p>Yes, all our plumbers are fully licensed, insured, and have undergone extensive training and background checks.</p>
+        </div>
+        
+        <div class="faq-card">
+          <h3>How do I schedule a service?</h3>
+          <p>You can schedule a service by calling us at (555) 123-4567, filling out the contact form on this page, or emailing us at info@reliableplumbing.com.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to Action -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>Need a Plumber Today?</h2>
+      <p>Don't wait until a small problem becomes a major issue. Contact us now for prompt, professional service.</p>
+      <a href="tel:5551234567" class="btn btn-white">
+        <i class="fas fa-phone"></i> Call (555) 123-4567
+      </a>
+    </div>
+  </section>
+</main>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-column">
+        <h3>Reliable Plumbing</h3>
+        <p>Your trusted provider for all plumbing needs since 2005.</p>
+        <p class="footer-phone">
+          <i class="fas fa-phone"></i> (555) 123-4567
+        </p>
+      </div>
+      
+      <div class="footer-column">
+        <h3>Quick Links</h3>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="testimonials.html">Testimonials</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-column">
+        <h3>Our Services</h3>
+        <ul class="footer-links">
+          <li><a href="services.html">Emergency Repairs</a></li>
+          <li><a href="services.html">Pipe Installation</a></li>
+          <li><a href="services.html">Drain Cleaning</a></li>
+          <li><a href="services.html">Water Heater Services</a></li>
+          <li><a href="services.html">Leak Detection</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-column">
+        <h3>Business Hours</h3>
+        <ul class="business-hours">
+          <li>Monday - Friday: 8:00 AM - 6:00 PM</li>
+          <li>Saturday: 9:00 AM - 4:00 PM</li>
+          <li>Sunday: Closed</li>
+          <li class="emergency-note">24/7 Emergency Service Available</li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <p>&copy; <span id="current-year"></span> Reliable Plumbing Services. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
+
