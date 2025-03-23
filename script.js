@@ -91,8 +91,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // Prepare form data for EmailJS
       const templateParams = {
-        name: contactForm.querySelector("#name").value,
-        email: contactForm.querySelector("#email").value,
+        from_name: contactForm.querySelector("#name").value,
+        from_email: contactForm.querySelector("#email").value,
         phone: contactForm.querySelector("#phone").value,
         message: contactForm.querySelector("#message").value,
         to_email: "ghostytb77777@gmail.com", // Your email address
@@ -139,62 +139,62 @@ document.addEventListener("DOMContentLoaded", () => {
         alert("EmailJS is not initialized. Please check the console for more details.")
       }
     })
+  }
 
-    // Real-time form validation
-    const formInputs = contactForm.querySelectorAll("input, textarea")
+  // Real-time form validation
+  const formInputs = contactForm.querySelectorAll("input, textarea")
 
-    formInputs.forEach((input) => {
-      // Create validation message element
-      const validationMessage = document.createElement("div")
-      validationMessage.className = "validation-message"
-      input.parentNode.appendChild(validationMessage)
+  formInputs.forEach((input) => {
+    // Create validation message element
+    const validationMessage = document.createElement("div")
+    validationMessage.className = "validation-message"
+    input.parentNode.appendChild(validationMessage)
 
-      input.addEventListener("blur", function () {
-        validateInput(this)
-      })
-
-      input.addEventListener("input", function () {
-        if (this.classList.contains("invalid")) {
-          validateInput(this)
-        }
-      })
+    input.addEventListener("blur", function () {
+      validateInput(this)
     })
 
-    function validateInput(input) {
-      const validationMessage = input.parentNode.querySelector(".validation-message")
+    input.addEventListener("input", function () {
+      if (this.classList.contains("invalid")) {
+        validateInput(this)
+      }
+    })
+  })
 
-      if (input.required && !input.value.trim()) {
+  function validateInput(input) {
+    const validationMessage = input.parentNode.querySelector(".validation-message")
+
+    if (input.required && !input.value.trim()) {
+      input.classList.add("invalid")
+      validationMessage.textContent = "This field is required"
+      validationMessage.style.display = "block"
+      return false
+    }
+
+    if (input.type === "email" && input.value.trim()) {
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+      if (!emailPattern.test(input.value)) {
         input.classList.add("invalid")
-        validationMessage.textContent = "This field is required"
+        validationMessage.textContent = "Please enter a valid email address"
         validationMessage.style.display = "block"
         return false
       }
-
-      if (input.type === "email" && input.value.trim()) {
-        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-        if (!emailPattern.test(input.value)) {
-          input.classList.add("invalid")
-          validationMessage.textContent = "Please enter a valid email address"
-          validationMessage.style.display = "block"
-          return false
-        }
-      }
-
-      if (input.type === "tel" && input.value.trim()) {
-        const phonePattern = /^[\d\s\-$$$$]+$/
-        if (!phonePattern.test(input.value)) {
-          input.classList.add("invalid")
-          validationMessage.textContent = "Please enter a valid phone number"
-          validationMessage.style.display = "block"
-          return false
-        }
-      }
-
-      input.classList.remove("invalid")
-      validationMessage.textContent = ""
-      validationMessage.style.display = "none"
-      return true
     }
+
+    if (input.type === "tel" && input.value.trim()) {
+      const phonePattern = /^[\d\s\-$$$$]+$/
+      if (!phonePattern.test(input.value)) {
+        input.classList.add("invalid")
+        validationMessage.textContent = "Please enter a valid phone number"
+        validationMessage.style.display = "block"
+        return false
+      }
+    }
+
+    input.classList.remove("invalid")
+    validationMessage.textContent = ""
+    validationMessage.style.display = "none"
+    return true
   }
 
   // Scroll reveal animations
