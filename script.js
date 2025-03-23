@@ -100,7 +100,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // Send email using EmailJS
       if (typeof emailjs !== "undefined") {
-        emailjs.send("reliableplumber", "template_rbzwkut", templateParams).then(
+        emailjs.send("reliableplumber", "template_488yf2a", templateParams).then(
           (response) => {
             console.log("SUCCESS!", response.status, response.text)
 
